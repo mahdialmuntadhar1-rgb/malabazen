@@ -101,3 +101,18 @@ node dist/index.js stats
 ALTER TABLE businesses ADD COLUMN IF NOT EXISTS whatsapp_status TEXT;
 ALTER TABLE businesses ADD COLUMN IF NOT EXISTS whatsapp_sent_at TIMESTAMPTZ;
 ```
+
+## Vercel deployment notes
+
+This repository is **not a Next.js app** and is also **not a Vite frontend**. It is a Node.js TypeScript CLI tool with an optional Express webhook listener.
+
+If you deploy from Vercel, use these project settings:
+
+- **Root Directory:** `whatsapp-crm`
+- **Framework Preset:** `Other`
+- **Build Command:** `npm run build`
+- **Output Directory:** *(leave empty)*
+
+If your Vercel project currently points to the repository root (`/`) with Framework Preset `Next.js`, Vercel will fail with “Could not identify Next.js version” / “No Next.js version detected” because there is no `next` dependency and no Next.js app in this repository.
+
+For webhook hosting, this project may require a traditional Node host (or additional serverless adaptation) rather than the default static deployment flow.
