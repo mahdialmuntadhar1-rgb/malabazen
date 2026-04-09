@@ -1,0 +1,4 @@
+node_modules/
+dist/
+.env
+campaign_log.csv
