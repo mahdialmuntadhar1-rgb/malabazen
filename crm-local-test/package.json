@@ -1,0 +1,46 @@
+{
+  "name": "whatsapp-crm",
+  "version": "1.0.0",
+  "description": "WhatsApp CRM Bulk Messaging System for Iraqi Business Outreach",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "send": "ts-node src/index.ts send",
+    "reset": "ts-node src/index.ts reset",
+    "stats": "ts-node src/index.ts stats",
+    "test": "ts-node src/index.ts test",
+    "webhook": "ts-node src/index.ts webhook"
+  },
+  "keywords": [
+    "whatsapp",
+    "crm",
+    "bulk-messaging",
+    "iraq",
+    "nabda",
+    "supabase"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "chalk": "^4.1.2",
+    "commander": "^12.0.0",
+    "csv-parse": "^5.5.6",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.7",
+    "@types/node-fetch": "^2.6.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
