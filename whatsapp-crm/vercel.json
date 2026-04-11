@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/api-server.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "src/api-server.ts"
+    }
+  ],
+  "env": {
+    "NABDA_BASE_URL": "@nabda_base_url",
+    "NABDA_TOKEN": "@nabda_token",
+    "SUPABASE_URL": "@supabase_url",
+    "SUPABASE_SERVICE_KEY": "@supabase_service_key"
+  }
+}
