@@ -7,6 +7,17 @@ export interface Env {
   NABDA_TOKEN: string;
 }
 
+// Cloudflare Pages Function handler type
+export interface PagesFunction<Env = unknown> {
+  (context: {
+    request: Request;
+    env: Env;
+    params: Record<string, string>;
+    data: Record<string, unknown>;
+    next: () => Promise<Response>;
+  }): Promise<Response> | Response;
+}
+
 export function json(data: unknown, status = 200): Response {
   return new Response(JSON.stringify(data), {
     status,

@@ -7,6 +7,7 @@
     "dev": "ts-node src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
+    "api": "ts-node src/api-server.ts",
     "send": "ts-node src/index.ts send",
     "reset": "ts-node src/index.ts reset",
     "stats": "ts-node src/index.ts stats",
@@ -27,6 +28,7 @@
     "@supabase/supabase-js": "^2.49.1",
     "chalk": "^4.1.2",
     "commander": "^12.0.0",
+    "cors": "^2.8.6",
     "csv-parse": "^5.5.6",
     "csv-writer": "^1.6.0",
     "dotenv": "^16.4.5",
@@ -34,6 +36,7 @@
     "node-fetch": "^2.7.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^4.17.21",
     "@types/node": "^20.12.7",
     "@types/node-fetch": "^2.6.11",

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { supabase } from './lib/supabase';
-import { Send, Users, MessageSquare, Settings, BarChart3, Phone } from 'lucide-react';
+import { Send, Users, MessageSquare, Settings, BarChart3, Phone, Smartphone } from 'lucide-react';
+import NabdaDashboard from './components/NabdaDashboard';
 
 interface Contact {
   id: string;
@@ -264,6 +265,7 @@ function App() {
             { id: 'dashboard', label: 'Dashboard', icon: BarChart3 },
             { id: 'contacts', label: 'Contacts', icon: Users },
             { id: 'messaging', label: 'Messaging', icon: Send },
+            { id: 'nabda', label: 'Nabda', icon: Smartphone },
             { id: 'settings', label: 'Settings', icon: Settings }
           ].map(tab => (
             <button
@@ -284,6 +286,7 @@ function App() {
         {activeTab === 'dashboard' && renderDashboard()}
         {activeTab === 'contacts' && renderContacts()}
         {activeTab === 'messaging' && renderMessaging()}
+        {activeTab === 'nabda' && <NabdaDashboard />}
         {activeTab === 'settings' && (
           <div className="bg-white rounded-lg shadow p-6">
             <h3 className="text-lg font-medium text-gray-900 mb-4">Settings</h3>
